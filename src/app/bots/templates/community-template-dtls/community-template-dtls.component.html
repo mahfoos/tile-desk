@@ -1,0 +1,129 @@
+<div class="navbar-brand" style="z-index: 1050;position: relative;padding-left:30px"
+    [ngStyle]="{'margin-top':isChromeVerGreaterThan100 === true ? '-64px' : '6px' }">
+    <i class="material-icons" style="vertical-align: middle !important; cursor: pointer;" (click)="goBack()">
+        keyboard_arrow_left
+    </i>
+    Template details
+</div>
+
+
+
+<div class="main-content" style="padding-top:0px;padding-left:0px; padding-right:0px">
+    <div class="container-fluid" style="padding-left: 5px;padding-right: 5px;">
+
+        <div class="button-row">
+            <div></div>
+            <button type="button" class="btn btn-new btn-size-l btn--primary" (click)="openTestSiteInPopupWindow()"
+                style="margin-right: 6px;">
+                <span>Test it out</span>
+            </button>
+            <button type="button" class="btn btn-new btn-size-l btn--primary" (click)="forkTemplate()">
+                <span>Import Chatbot</span>
+            </button>
+        </div>
+        <div class="template-dtls-page-content">
+            <div class="template-dtls-icon-and-title">
+
+                <div class="template-dtls-icon">
+
+                    <span *ngIf="!template?.bigImage">
+                        <img *ngIf="UPLOAD_ENGINE_IS_FIREBASE" class="cmnty-chatbot-dtls-img"
+                            src="https://firebasestorage.googleapis.com/v0/b/{{storageBucket}}/o/profiles%2F{{template?._id}}%2Fphoto.jpg?alt=media"
+                            onerror="this.src='assets/img/avatar_bot_tiledesk.svg'" />
+
+                        <img *ngIf="!UPLOAD_ENGINE_IS_FIREBASE" class="cmnty-chatbot-dtls-img"
+                            src="{{baseUrl}}images?path=uploads%2Fusers%2F{{template?._id}}%2Fimages%2Fthumbnails_200_200-photo.jpg"
+                            onerror="this.src='assets/img/avatar_bot_tiledesk.svg'" />
+                    </span>
+                    <span *ngIf="template?.bigImage">
+                        <img class="cmnty-chatbot-dtls-img" src="{{template.bigImage}}">
+                    </span>
+                </div>
+
+                <div class="template-dtls-title">
+                    {{ template?.name}}
+                </div>
+                <!--  -->
+                <div *ngIf="template?.certified === true" style="height: 24px;margin-left: 6px;z-index: 2;"
+                    matTooltipClass="custom-mat-tooltip" matTooltip="Tiledesk verified" #tooltip="matTooltip"
+                    matTooltipPosition='below' matTooltipHideDelay="100">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24"
+                        style="enable-background:new 0 0 24 24;" xml:space="preserve" style="width: 35px;height:auto;">
+                        <style type="text/css">
+                            .certified_st0 {
+                                fill: none;
+                            }
+
+                            .certified_st1 {
+                                fill: #2B95E9;
+                            }
+                        </style>
+                        <path class="certified_st0" d="M0,0h24v24H0V0z" />
+                        <g>
+                            <path class="certified_st0" d="M0,0h24v24H0V0z" />
+                        </g>
+                        <path class="certified_st1"
+                            d="M23,12l-2.4-2.8l0.3-3.7l-3.6-0.8l-1.9-3.2L12,3L8.6,1.5L6.7,4.7L3.1,5.5l0.3,3.7L1,12l2.4,2.8l-0.3,3.7
+                                                                                l3.6,0.8l1.9,3.2L12,21l3.4,1.5l1.9-3.2l3.6-0.8l-0.3-3.7L23,12z M11,15.5L7.4,12l1.4-1.4l2.1,2.1l4.2-4.2l1.4,1.4L11,15.5z" />
+                    </svg>
+                </div>
+
+            </div>
+
+            <div class="cmnty-chatbot-dtls-author-and-publication-date-wpr">
+                <div class="cmnty-chatbot-dtls-author">
+                    <!-- --------------------------------------------------- -->
+                    <!-- USECASE uploadEngine Firebase -->
+                    <!-- --------------------------------------------------- -->
+                    <img *ngIf="UPLOAD_ENGINE_IS_FIREBASE" class="cmnty-chatbot-dtls-author"
+                        src="https://firebasestorage.googleapis.com/v0/b/{{storageBucket}}/o/profiles%2F{{template?.createdBy}}%2Fphoto.jpg?alt=media"
+                        onerror="this.src='assets/img/no_image_user.png'" decoding="async" data-nimg="intrinsic">
+
+
+                    <!----------------------------------------------------- -->
+                    <!-- USECASE uploadEngine Native -->
+                    <!-- --------------------------------------------------- -->
+                    <img *ngIf="!UPLOAD_ENGINE_IS_FIREBASE" class="cmnty-chatbot-dtls-author"
+                        src="{{baseUrl}}images?path=uploads%2Fusers%2F{{template?.createdBy}}%2Fimages%2Fthumbnails_200_200-photo.jpg"
+                        onerror="this.src='assets/img/no_image_user.png'" decoding="async" data-nimg="intrinsic">
+                </div>
+
+                <div class="cmnty-chatbot-publication-date">
+                    Published {{ template?.createdAt | date: 'd/M/y'}} • Updated
+                    {{ template?.updatedAt | date: 'd/M/y'}}
+                </div>
+
+            </div>
+
+            <div class="template-dtls-description"  [innerHTML]="template?.description | marked ">
+                <!-- {{ template?.description}} -->
+            </div>
+
+            <div class="template-dtls-tags-wpr" *ngIf="template?.tags">
+                <div class="template-dtls-tag" *ngFor="let tag of template?.tags">
+                    #{{tag }}
+                </div>
+            </div>
+
+            <div class="template-dtls-template-features-title"
+                *ngIf="template?.templateFeatures && template?.templateFeatures.length > 0">
+                Template Features
+            </div>
+
+            <div class="template-dtls-template-features-list"
+                *ngIf="template?.templateFeatures && template?.templateFeatures.length > 0">
+
+                <ul style="padding-left: 20px;">
+                    <li class="template-dtls-feature" *ngFor="let feature of template?.templateFeatures">
+                        {{feature}}
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+    </div>
+</div>

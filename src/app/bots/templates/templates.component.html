@@ -1,0 +1,574 @@
+<p style="z-index: 1050;position: relative;  padding-left:30px" class="navbar-brand"
+    [ngStyle]="{'margin-top':isChromeVerGreaterThan100 === true ? '-64px' : '6px' }">
+    Chatbot
+</p>
+
+<div class="main-content" style="padding-top:0px;padding-left:0px; padding-right:0px">
+    <div class="container-fluid" style="padding-left: 5px;padding-right: 5px;">
+
+
+        <div class="content-wpr" style="display: flex;">
+            <appdashboard-bots-sidebar [allTemplatesCount]="allTemplatesCount"
+                [allCommunityTemplatesCount]="allCommunityTemplatesCount"
+                [customerSatisfactionTemplatesCount]="customerSatisfactionTemplatesCount"
+                [increaseSalesTemplatesCount]="increaseSalesTemplatesCount" [myChatbotOtherCount]="myChatbotOtherCount"
+                [customerSatisfactionBotsCount]="customerSatisfactionBotsCount"
+                [increaseSalesBotsCount]="increaseSalesBotsCount" style="border-right:1px solid #e5effe !important;">
+            </appdashboard-bots-sidebar>
+
+
+            <div class="teplate-content" style="flex: 1 1 auto;">
+
+                <div class="row button-row">
+                    <div class="col-sm-12">
+                        <div class="t--btn-wpr">
+                            <button type="button" class="btn btn-new btn-size-m btn--primary"
+                                (click)="createBlankTilebot()">
+                                <span>Add from scratch</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="css-121pzjd eooq4xa4">
+                    <h2 weight="500" class="css-180zyx9 eimqq0f0">Browse templates</h2>
+                    <div class="css-1aiy01b eooq4xa3">
+                        <div class="css-1c6ki94 eooq4xa2">
+                            <div class="css-pk9ga3 e15c8v5c0">
+                                <div aria-label="job card" class="css-107yxwo egprlbv2">
+                                    <div class="css-157pd46 egprlbv1">
+                                        <h2 weight="500" class="css-5htwin eimqq0f0">Increase sales</h2>
+                                        <span size="8" class="css-yn1por e1soz8mc0">
+                                        </span>
+                                        <p weight="400" color="subdued" class="css-stcfhd eimqq0f0">
+                                            Use chatbot templates to generate more sales in your business.</p>
+                                        <div class="css-4zk9wx egprlbv0">
+                                            <div class="css-9b9yum e1dt9iqv0">
+                                                <button type="button"
+                                                    class=" btn btn-new btn-size-m btn-link undefined">
+                                                    <span>Explore templates</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div aria-label="job card" class="css-z87fk1 egprlbv2">
+                                    <div class="css-157pd46 egprlbv1">
+                                        <h2 weight="500" class="css-5htwin eimqq0f0">Generate leads</h2><span size="8"
+                                            class="css-yn1por e1soz8mc0"></span>
+                                        <p weight="400" color="subdued" class="css-stcfhd eimqq0f0">Use chatbot
+                                            templates to generate more leads.</p>
+                                        <div class="css-4zk9wx egprlbv0">
+                                            <div class="css-9b9yum e1dt9iqv0"><button type="button"
+                                                    class=" btn btn-new btn-size-m btn-link undefined"><span>Explore
+                                                        templates</span></button></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div aria-label="job card" class="css-z9hrrs egprlbv2">
+                                    <div class="css-157pd46 egprlbv1">
+                                        <h2 weight="500" class="css-5htwin eimqq0f0">Solve problems</h2><span size="8"
+                                            class="css-yn1por e1soz8mc0"></span>
+                                        <p weight="400" color="subdued" class="css-stcfhd eimqq0f0">Solve problems
+                                            automatically with custom chatbot templates.</p>
+                                        <div class="css-4zk9wx egprlbv0">
+                                            <div class="css-9b9yum e1dt9iqv0">
+                                                <button type="button"
+                                                    class=" btn btn-new btn-size-m btn-link undefined">
+                                                    <span>Explore  templates</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                  
+                    </div>
+                </div> -->
+
+                <div class="page-content--wpr">
+                    <div class="template-page-title">
+                        <span *ngIf="COMMUNITY_TEMPLATE">
+                            Community
+                        </span>
+                        <!-- <div class="t--btn-wpr" *ngIf="!COMMUNITY_TEMPLATE">
+                            <button type="button" class="btn btn-new btn-size-m btn--primary"
+                                (click)="createBlankTilebot()">
+                                <span>Add from scratch</span>
+                            </button>
+                        </div> -->
+                    </div>
+                    <loading-spinner *ngIf="showSpinner"></loading-spinner>
+                    <div *ngIf="!showSpinner" class="page-content">
+
+                        <!--  -->
+                        <div *ngIf="CERTIFIED_TEMPLATE" class="template-cards-wpr">
+                            <div class="template-cards">
+
+                                <!-- ---------------------------------------------- -->
+                                <!-- @ New card -->
+                                <!-- ---------------------------------------------- -->
+                                <div style="display: none;" class="t-card">
+                                    <div style="padding: 26px;
+                                        color: #3c4858;">
+                                        <div>
+                                            <img style="width: auto; height: 40px;"
+                                                src="https://tiledesk.com/wp-content/uploads/2022/11/IVR-Menu.png">
+                                        </div>
+                                        <span size="20" class="blank-span-h20"></span>
+                                        <span>This chatbot can help customers with problems without needing human touch,
+                                            like
+                                            changing passwords or displaying product prices.
+                                        </span>
+
+                                        <span aria-label="tag" class="template-tag"
+                                            style="color: rgb(0, 73, 189); background-color: rgb(220, 233, 255); width: fit-content; margin-top: 10px;">
+                                            <p weight="normal" class="template-tag-name">
+                                                Self-serve </p>
+                                        </span>
+                                    </div>
+
+                                    <div class="card__overlay">
+                                        <div class="card__header">
+                                            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M 40 80 c 22 0 40 -22 40 -40 v 40 Z" />
+                                            </svg>
+                                            <!-- <img class="card__thumb"
+                                                src="https://tiledesk.com/wp-content/uploads/2022/11/IVR-Menu.png"
+                                                alt="" /> -->
+                                            <div class="card__header-text template-card-title">
+                                                <h3 class="card__title">
+                                                    Tommy for Customer Service </h3>
+                                                <!-- <span class="card__status">1 hour ago</span> -->
+                                            </div>
+                                        </div>
+                                        <div class="card__description">
+                                            <button type="button" class="btn btn-new btn-size-l btn--primary btn-block"
+                                                (click)="openDialog(template)">
+                                                <span>Use template</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="template-card" *ngFor="let template of templates"
+                                    [ngClass]="{'template-card-one-template': templates?.length === 1}">
+                                    <!-- <svg aria-hidden="true" focusable="false"
+                                        style="width: 0px; height: 0px; position: absolute;">
+                                        <linearGradient id="bot-cool-gradient" x2="1" y2="1">
+                                            <stop offset="0%" stop-color="#2d78e9"></stop>
+                                            <stop offset="100%" stop-color="#0abcff"></stop>
+                                        </linearGradient>
+                                    </svg> -->
+                                    <div class="template-card-img-row template-img">
+                                        <span *ngIf="!template?.bigImage">
+                                            <img *ngIf="UPLOAD_ENGINE_IS_FIREBASE" style="width: 40px; height: 40px;"
+                                                src="https://firebasestorage.googleapis.com/v0/b/tiledesk-prod-v2.appspot.com/o/profiles%2F{{template._id}}%2Fphoto.jpg?alt=media"
+                                                onerror="this.src='assets/img/avatar_bot_tiledesk.svg'">
+                                            <img *ngIf="!UPLOAD_ENGINE_IS_FIREBASE" style="width: 40px; height: 40px;"
+                                                src="{{baseUrl}}images?path=uploads%2Fusers%2F{{template?._id}}%2Fimages%2Fthumbnails_200_200-photo.jpg"
+                                                onerror="this.src='assets/img/avatar_bot_tiledesk.svg'">
+                                        </span>
+                                        <span *ngIf="template?.bigImage">
+                                            <img src="{{template.bigImage}}" style="width: auto; height: 40px;">
+                                        </span>
+
+                                    </div>
+                                    <span size="20" class="blank-span-h20"></span>
+                                    <h2 weight="normal" class="template-name template-card-title">
+                                        {{template.name}}
+                                    </h2>
+                                    <span size="8" class="blank-span-h08"></span>
+                                    <p weight="normal" class="template-description">
+                                        <!-- {{template.description}} -->
+                                        {{template.shortDescription}}
+                                        <!-- <span style="display: block; margin-top: 6px;"
+                                            *ngIf="template?.certified === false" class="template-author">
+                                            Author: {{template.createdBy}}
+                                        </span> -->
+                                    </p>
+                                    <div class="use-template-btn-row use-template-btn-wpr">
+                                        <button type="button" class="btn btn-new btn-size-l btn--primary btn-block"
+                                            (click)="openDialog(template)">
+
+                                            <span>Use template</span>
+
+                                        </button>
+                                    </div>
+                                    <div class="template-card-footer template-footer">
+                                        <div class="template-tags-wpr">
+                                            <div class="template-tags" *ngIf="template.certifiedTags">
+
+                                                <span aria-label="tag" class="template-tag"
+                                                    [ngStyle]="{'color': tag.color, 'background-color':  tag.background}"
+                                                    *ngFor="let tag of template.certifiedTags">
+                                                    <p weight="normal" class="template-tag-name">
+                                                        {{tag.name }} </p>
+
+                                                </span>
+
+                                            </div>
+                                        </div>
+                                        <!--  badge "New" in the top right corner of the card -->
+                                        <svg *ngIf="template?.certified === true" width="92" height="104"
+                                            viewBox="0 0 92 104" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                            aria-label="new template" class="template-card-right-top-corner-badge">
+                                            <g filter="url(#filter0_d_1601_21599)">
+                                                <path d="M92 30L62 0H32L92 60V30Z" fill="#34B857"></path>
+                                            </g>
+                                            <path
+                                                d="M61.2288 21.8562L68.2575 14.8276L66.822 13.3922L62.2386 17.9756L63.2186 9.78876L61.9812 8.55133L54.9526 15.58L56.388 17.0154L60.9714 12.4319L59.9914 20.6188L61.2288 21.8562ZM62.6939 23.3213L67.0695 27.6969L68.4356 26.3307L65.4954 23.3906L66.9804 21.9057L69.3265 24.2518L70.6927 22.8857L68.3465 20.5395L69.7918 19.0942L72.732 22.0344L74.0981 20.6682L69.7225 16.2927L62.6939 23.3213ZM73.7453 34.3727L75.0916 35.719L83.8131 30.3832L82.2885 28.8587L76.5468 32.4621L79.3484 25.6809L72.5672 28.4825L76.1707 22.7408L74.6461 21.2163L69.3103 29.9377L70.6566 31.284L75.9331 29.0963L73.7453 34.3727Z"
+                                                fill="white"></path>
+                                            <defs>
+                                                <filter id="filter0_d_1601_21599" x="0" y="-20" width="124" height="124"
+                                                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                                    <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                                                    <feColorMatrix in="SourceAlpha" type="matrix"
+                                                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                                        result="hardAlpha">
+                                                    </feColorMatrix>
+                                                    <feOffset dy="12"></feOffset>
+                                                    <feGaussianBlur stdDeviation="16"></feGaussianBlur>
+                                                    <feColorMatrix type="matrix"
+                                                        values="0 0 0 0 0 0 0 0 0 0.105882 0 0 0 0 0.278431 0 0 0 0.12 0">
+                                                    </feColorMatrix>
+                                                    <feBlend mode="normal" in2="BackgroundImageFix"
+                                                        result="effect1_dropShadow_1601_21599">
+                                                    </feBlend>
+                                                    <feBlend mode="normal" in="SourceGraphic"
+                                                        in2="effect1_dropShadow_1601_21599" result="shape">
+                                                    </feBlend>
+                                                </filter>
+                                            </defs>
+                                        </svg>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ------------------------------------------------------------ -->
+                        <!-- @ Community tempates -->
+                        <!-- ------------------------------------------------------------ -->
+                        <!-- Search bar -->
+                        <div *ngIf="COMMUNITY_TEMPLATE" class="css-1m7jc8x cmnty-tmplt-search-bar-container">
+                            <div class="css-t94b1v cmnty-tmplt-search-bar-wpr">
+                                <div class="css-vm1iz7 cmnty-tmplt-search-bar">
+                                    <div class="css-1wp4ooc cmnty-tmplt-search-bar-input-and-icon-wpr">
+                                        <input class="css-n1s1a0 cmnty-tmplt-search-bar-input"
+                                            placeholder="Search for Chatbot name, description and tags"
+                                            [(ngModel)]="valueToSearch" (ngModelChange)="onChangeValueToSearch($event)"
+                                            (keyup.enter)="searchInCommunityTemplates()">
+                                        <div *ngIf="!valueToSearch" class="css-1wdq4w3 cmnty-tmplt-search-bar-icon"
+                                            (click)="searchInCommunityTemplates()">
+                                            <svg preserveAspectRatio="xMidYMin" width="16" height="16"
+                                                viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                                                class="css-1gcl232" style="vertical-align: middle;">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M11 3.75C6.99594 3.75 3.75 6.99594 3.75 11C3.75 15.0041 6.99594 18.25 11 18.25C12.9606 18.25 14.7395 17.4717 16.0445 16.2073C16.0669 16.1767 16.092 16.1474 16.1197 16.1197C16.1474 16.092 16.1767 16.0669 16.2073 16.0445C17.4717 14.7395 18.25 12.9606 18.25 11C18.25 6.99594 15.0041 3.75 11 3.75ZM17.6949 16.6342C18.9773 15.112 19.75 13.1462 19.75 11C19.75 6.16751 15.8325 2.25 11 2.25C6.16751 2.25 2.25 6.16751 2.25 11C2.25 15.8325 6.16751 19.75 11 19.75C13.1462 19.75 15.112 18.9773 16.6342 17.6949L20.4697 21.5303C20.7626 21.8232 21.2374 21.8232 21.5303 21.5303C21.8232 21.2374 21.8232 20.7626 21.5303 20.4697L17.6949 16.6342Z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div *ngIf="valueToSearch?.length > 0"
+                                            class="css-1xf8dww cmnty-tmplt-clear-search-wpr"
+                                            (click)="clearSearchInCommunityTemplates()">
+                                            <div class="css-36v8q4 cmnty-tmplt-clear-search-btn-wpr">
+                                                <button class="css-1bo951b cmnty-tmplt-clear-search-btn" type="button"
+                                                    aria-label="Clear">
+                                                    <svg preserveAspectRatio="xMidYMin" width="16" height="16"
+                                                        viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                                                        class="css-1gcl232" style="vertical-align: middle;">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                            d="M5.46967 5.46967C5.76256 5.17678 6.23744 5.17678 6.53033 5.46967L12 10.9393L17.4697 5.46967C17.7626 5.17678 18.2374 5.17678 18.5303 5.46967C18.8232 5.76256 18.8232 6.23744 18.5303 6.53033L13.0607 12L18.5303 17.4697C18.8232 17.7626 18.8232 18.2374 18.5303 18.5303C18.2374 18.8232 17.7626 18.8232 17.4697 18.5303L12 13.0607L6.53033 18.5303C6.23744 18.8232 5.76256 18.8232 5.46967 18.5303C5.17678 18.2374 5.17678 17.7626 5.46967 17.4697L10.9393 12L5.46967 6.53033C5.17678 6.23744 5.17678 5.76256 5.46967 5.46967Z">
+                                                        </path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div *ngIf="COMMUNITY_TEMPLATE">
+                            <div class="css-ph3dp7 no-search-result-main" *ngIf="THERE_ARE_RESULTS === false">
+                                <div class="css-18ajwok no-search-result-content-wpr">
+                                    <div class="css-ph3dp7 no-search-result-content">
+                                        <div class="css-zf71ae no-search-result-text-wpr">
+                                            <span class="css-1of0z7a no-search-result-text"
+                                                style="width: 570px;display: block;">
+                                                No chatbot or tags found for "{{valueToSearch }}"
+                                            </span>
+
+                                        </div>
+                                        <div class="css-1gw8cn1 no-search-result-close-div"> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Community tempaltes   -->
+                        <div *ngIf="COMMUNITY_TEMPLATE" class="css-ph3dp7 cmnty-tmplt-list--wpr">
+                            <div class="css-18ajwok cmnty-tmplt-list">
+                                <div class="css-ph3dp7 cmnty-tmplt-list--wpr">
+                                    <div class="css-18ajwok cmnty-tmplt-list">
+                                        <div class="css-nghpcj cmnty-tmplt" *ngFor="let template of templates"
+                                            (click)="goToCommunityTemplateDetail(template._id)">
+
+                                            <div class="css-1n67j40 cmnty-tmplt-header-wpr">
+                                                <div class="css-umm87 cmnty-tmplt-header-left">
+                                                    <div class="css-1pwjctj cmnty-tmplt-content">
+                                                        <!-- <div data-focus-guard="true" tabindex="-1"
+                                                            style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;">
+                                                        </div> -->
+                                                        <!-- <span data-focus-lock-disabled="disabled" data-focus-lock="21"
+                                                            class="popover-control-container"> -->
+                                                        <span class="css-36v8q4 cmnty-tmplt-header-left-author-main">
+                                                            <div class="css-bp3124 cmnty-tmplt-header-left-author-wpr">
+                                                                <div class="css-u5es3w cmnty-tmplt-header-left-author">
+                                                                    <div
+                                                                        class="css-m6gn6 cmnty-tmplt-header-left-author-avatar">
+                                                                        <span
+                                                                            style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;">
+                                                                            <span
+                                                                                style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;">
+                                                                                <img alt="" aria-hidden="true"
+                                                                                    src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
+                                                                                    style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;">
+                                                                            </span>
+                                                                            <!-- --------------------------------------------------- -->
+                                                                            <!-- USECASE uploadEngine Firebase -->
+                                                                            <!-- --------------------------------------------------- -->
+                                                                            <img *ngIf="UPLOAD_ENGINE_IS_FIREBASE"
+                                                                                src="https://firebasestorage.googleapis.com/v0/b/{{storageBucket}}/o/profiles%2F{{template?.createdBy}}%2Fphoto.jpg?alt=media"
+                                                                                onerror="this.src='assets/img/no_image_user.png'"
+                                                                                decoding="async" data-nimg="intrinsic"
+                                                                                style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;">
+
+
+                                                                            <!----------------------------------------------------- -->
+                                                                            <!-- USECASE uploadEngine Native -->
+                                                                            <!-- --------------------------------------------------- -->
+                                                                            <img *ngIf="!UPLOAD_ENGINE_IS_FIREBASE"
+                                                                                src="{{baseUrl}}images?path=uploads%2Fusers%2F{{template?.createdBy}}%2Fimages%2Fthumbnails_200_200-photo.jpg"
+                                                                                onerror="this.src='assets/img/no_image_user.png'"
+                                                                                decoding="async" data-nimg="intrinsic"
+                                                                                style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;">
+
+                                                                        </span>
+                                                                    </div>
+                                                                    <!-- <div
+                                                                        class="css-12zqyc0 cmnty-tmplt-header-left-author-avatar-name-wpr">
+                                                                        <span
+                                                                            class="css-o4584k cmnty-tmplt-header-left-author-avatar-name">
+                                                                            Nicola Lanzilotto
+                                                                        </span>
+                                                                    </div> -->
+                                                                </div>
+                                                            </div>
+                                                        </span>
+                                                        <!-- </span> -->
+                                                        <!-- <div data-focus-guard="true" tabindex="-1"
+                                                            style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;">
+                                                        </div> -->
+
+                                                        <span
+                                                            class="css-1drl345 cmnty-tmplt-header-left-publication-date-wpr">
+                                                            Published
+                                                        </span>
+                                                    </div>
+
+                                                    <span class="css-9w8l6j cmnty-tmplt-header-left-date-wpr">
+                                                        <span class="css-1e00qvh cmnty-tmplt-header-left-date">
+                                                            {{ template.createdAt | date: 'd/M/y'}}
+                                                        </span>
+                                                    </span>
+                                                    <span
+                                                        class="css-1e00qvh cmnty-tmplt-header-left-publication-date-dot">•</span>
+
+                                                    <span
+                                                        class="css-1drl345 cmnty-tmplt-header-left-publication-date-wpr">
+                                                        Updated
+                                                    </span>
+                                                    <span class="css-9w8l6j cmnty-tmplt-header-left-date-wpr">
+                                                        <span class="css-1e00qvh cmnty-tmplt-header-left-date">
+                                                            {{ template.updatedAt | date: 'd/M/y'}}
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                                <!-- Like -->
+                                                <!-- <div class="css-cg4is2 cmnty-tmplt-header-right-wrp">
+                                                    <div class="css-36v8q4 cmnty-tmplt-header-right">
+                                                        <button type="button"
+                                                            class="css-1pp49co cmnty-tmplt-header-like-btn">
+                                                            <div class="css-6152sw">
+                                                                <svg preserveAspectRatio="xMidYMin" width="16"
+                                                                    height="16" viewBox="0 0 24 24" fill="currentColor"
+                                                                    aria-hidden="true" class="css-1gcl232"
+                                                                    style="vertical-align: middle;">
+                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                        d="M14.5577 2.7242C15.3161 2.40993 16.1291 2.24817 16.9501 2.24817C17.7711 2.24817 18.5841 2.40993 19.3426 2.7242C20.101 3.03848 20.7902 3.49911 21.3706 4.07979C21.9511 4.66014 22.4117 5.34918 22.7259 6.10755C23.0402 6.86602 23.2019 7.67898 23.2019 8.49999C23.2019 9.321 23.0402 10.134 22.7259 10.8924C22.4117 11.6509 21.9511 12.3399 21.3704 12.9203C21.3704 12.9204 21.3705 12.9203 21.3704 12.9203L12.5304 21.7603C12.2376 22.0532 11.7627 22.0532 11.4698 21.7603L2.62979 12.9203C1.45744 11.748 0.798828 10.1579 0.798828 8.49999C0.798828 6.84205 1.45744 5.25201 2.62979 4.07966C3.80213 2.90732 5.39217 2.2487 7.05012 2.2487C8.70806 2.2487 10.2981 2.90732 11.4704 4.07966L12.0001 4.60933L12.5297 4.07979C13.1101 3.49911 13.7992 3.03848 14.5577 2.7242ZM20.3097 5.1402C19.8686 4.69889 19.3448 4.3488 18.7684 4.10995C18.1919 3.87111 17.5741 3.74817 16.9501 3.74817C16.3262 3.74817 15.7083 3.87111 15.1319 4.10995C14.5554 4.3488 14.0317 4.69889 13.5906 5.1402L12.5304 6.20032C12.2376 6.49322 11.7627 6.49322 11.4698 6.20032L10.4098 5.14032C9.51875 4.24928 8.31024 3.7487 7.05012 3.7487C5.79 3.7487 4.58149 4.24928 3.69045 5.14032C2.79941 6.03136 2.29883 7.23987 2.29883 8.49999C2.29883 9.76012 2.79941 10.9686 3.69045 11.8597L12.0001 20.1693L20.3098 11.8597C20.7511 11.4186 21.1013 10.8947 21.3402 10.3183C21.579 9.74181 21.7019 9.12396 21.7019 8.49999C21.7019 7.87603 21.579 7.25818 21.3402 6.68173C21.1013 6.10529 20.751 5.58131 20.3097 5.1402Z">
+                                                                    </path>
+                                                                </svg>
+                                                                <span class="css-o4584k">336</span>
+                                                            </div>
+                                                        </button>
+                                                    </div>
+                                                </div> -->
+                                            </div>
+                                            <div class="css-7hwtau cmnty-tmplt-card-content-wpr">
+                                                <div class="css-19xjgvx cmnty-tmplt-card-content">
+                                                    <div class="css-ph3dp7 cmnty-tmplt--card">
+                                                        <div
+                                                            class="css-8p6k7j cmnty-tmplt-card-img-and-description-wpr">
+                                                            <div class="css-1qaq6q9 cmnty-tmplt-card-img">
+                                                                <!-- <span class="cmnty-tmplt-card-img-wpr"
+                                                                    style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"> -->
+                                                                <!-- <span
+                                                                        style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;">
+                                                                        <img
+                                                                            alt="" aria-hidden="true"
+                                                                            src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2784%27%20height=%2784%27/%3e"
+                                                                            style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;">
+                                                                    </span> -->
+                                                                <!-- <img alt="chatbot-img"
+                                                                        srcset="https://replit.com/cdn-cgi/image/width=96,quality=80,format=auto/https://storage.googleapis.com/replit/images/1675019235615_f9bee3dc1581ac9c38ec4159538b1b98.png 1x, https://replit.com/cdn-cgi/image/width=256,quality=80,format=auto/https://storage.googleapis.com/replit/images/1675019235615_f9bee3dc1581ac9c38ec4159538b1b98.png 2x"
+                                                                        src="https://replit.com/cdn-cgi/image/width=256,quality=80,format=auto/https://storage.googleapis.com/replit/images/1675019235615_f9bee3dc1581ac9c38ec4159538b1b98.png"
+                                                                        decoding="async" data-nimg="intrinsic"
+                                                                        style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;"> -->
+
+
+
+
+                                                                <span *ngIf="!template?.bigImage">
+                                                                    <img *ngIf="UPLOAD_ENGINE_IS_FIREBASE"
+                                                                        class="cmnty-chatbot-img"
+                                                                        src="https://firebasestorage.googleapis.com/v0/b/{{storageBucket}}/o/profiles%2F{{template?._id}}%2Fphoto.jpg?alt=media"
+                                                                        onerror="this.src='assets/img/avatar_bot_tiledesk.svg'"
+                                                                        style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;" />
+
+                                                                    <img *ngIf="!UPLOAD_ENGINE_IS_FIREBASE"
+                                                                        class="cmnty-chatbot-img"
+                                                                        src="{{baseUrl}}images?path=uploads%2Fusers%2F{{template?._id}}%2Fimages%2Fthumbnails_200_200-photo.jpg"
+                                                                        onerror="this.src='assets/img/avatar_bot_tiledesk.svg'"
+                                                                        style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;" />
+                                                                </span>
+                                                                <span *ngIf="template?.bigImage">
+                                                                    <img class="cmnty-chatbot-img"
+                                                                        src="{{template.bigImage}}"
+                                                                        style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;">
+                                                                </span>
+
+
+
+                                                                <!-- <img *ngIf="template?.bigImage"
+                                                                        src="{{template.bigImage}}"> -->
+                                                                <!-- </span> -->
+                                                            </div>
+                                                            <div class="css-14dz4a cmnty-tmplt-card-description-wpr">
+                                                                <div class="css-wzynpy cmnty-tmplt-card-title-wpr">
+                                                                    <div class="css-78d9ti cmnty-tmplt-card-title">
+                                                                        {{template.name}}
+                                                                    </div>
+
+                                                                    <div *ngIf="template?.certified === true"
+                                                                        style="height: 24px;margin-left: 6px;z-index: 2;"
+                                                                        matTooltipClass="custom-mat-tooltip"
+                                                                        matTooltip="Tiledesk verified"
+                                                                        #tooltip="matTooltip" matTooltipPosition='below'
+                                                                        matTooltipHideDelay="100">
+                                                                        <svg version="1.1" id="Layer_1"
+                                                                            xmlns="http://www.w3.org/2000/svg"
+                                                                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                            x="0px" y="0px" viewBox="0 0 24 24"
+                                                                            style="enable-background:new 0 0 24 24;"
+                                                                            xml:space="preserve"
+                                                                            style="width: 24px;height:auto;">
+                                                                            <style type="text/css">
+                                                                                .certified_st0 {
+                                                                                    fill: none;
+                                                                                }
+
+                                                                                .certified_st1 {
+                                                                                    fill: #2B95E9;
+                                                                                }
+                                                                            </style>
+                                                                            <path class="certified_st0"
+                                                                                d="M0,0h24v24H0V0z" />
+                                                                            <g>
+                                                                                <path class="certified_st0"
+                                                                                    d="M0,0h24v24H0V0z" />
+                                                                            </g>
+                                                                            <path class="certified_st1"
+                                                                                d="M23,12l-2.4-2.8l0.3-3.7l-3.6-0.8l-1.9-3.2L12,3L8.6,1.5L6.7,4.7L3.1,5.5l0.3,3.7L1,12l2.4,2.8l-0.3,3.7
+                                                                                l3.6,0.8l1.9,3.2L12,21l3.4,1.5l1.9-3.2l3.6-0.8l-0.3-3.7L23,12z M11,15.5L7.4,12l1.4-1.4l2.1,2.1l4.2-4.2l1.4,1.4L11,15.5z" />
+                                                                        </svg>
+                                                                    </div>
+                                                                </div>
+                                                                <span class="css-1y2t2y1 cmnty-tmplt-card-description"
+                                                                    style=" -webkit-box-orient: vertical;">
+                                                                    {{template.description}}
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="css-1fubhz3 cmnty-tmplt-card-footer">
+                                                            <div class="css-pqgycx cmnty-tmplt-card-footer-left">
+
+                                                            </div>
+                                                            <div class="css-sa2iis cmnty-tmplt-card-footer-right-wpr">
+                                                                <div class="css-1p5njkb cmnty-tmplt-card-footer-right">
+                                                                    <div class="css-1pwjctj cmnty-tmplt-content"
+                                                                        *ngIf="template.tags">
+                                                                        <div class="css-1limyoz cmnty-tmplt-tag-wpr"
+                                                                            *ngFor="let tag of template.tags | slice:0:3; let i=index">
+                                                                            <div class="css-14z49fr cmnty-tmplt-tag">
+                                                                                <div
+                                                                                    class="css-53dz3e cmnty-tmplt-tag-content-wpr">
+                                                                                    <div
+                                                                                        class="css-wnpbuq cmnty-tmplt-tag-content">
+                                                                                        <span
+                                                                                            class="css-1c3y4f8 cmnty-tmplt-tag-hash">
+                                                                                            #
+                                                                                        </span>
+                                                                                        <span
+                                                                                            class="css-13s51og cmnty-tmplt-tag-name">
+                                                                                            {{tag}}
+                                                                                        </span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </div>
+                                                                        <div *ngIf="template?.tags?.length > 3">
+                                                                            + {{ template?.tags?.length - 3 }}
+                                                                        </div>
+
+
+                                                                        <!-- <span class="css-1c3y4f8">+2</span> -->
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ./ real -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

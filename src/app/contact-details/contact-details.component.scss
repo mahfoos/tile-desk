@@ -1,0 +1,661 @@
+@import "./src/assets/sass/md/_variables.scss";
+.table td,
+.table th {
+  vertical-align: middle;
+}
+
+// PADDING TOP & PADDING BOTTOM CUSTOMIZED FOR THE CONTACT DETAILS TABLE
+.table td {
+  // padding-top: 3px;
+  // padding-bottom: 3px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.table td p {
+  margin-bottom: 0px;
+}
+
+.btn-visibility-custom {
+  padding-top: 2px;
+  padding-bottom: 1px;
+  padding-right: 3px;
+  padding-left: 3px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.card form [class*="col-"] {
+  padding: 0px;
+}
+
+// HOVER ON THE MEMBER LIST OF THE COLUMN SERVED BY
+p.member:hover {
+  background-color: #58c1d6;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.title-attribute {
+  font-family: "Poppins", "Roboto", "Arial", sans-serif;
+  color: #394f5a;
+  font-weight: 500;
+}
+.attribute {
+  color: #7695a5;
+  font-weight: 500;
+}
+
+.ws_requets_msgs__attributes {
+  font-family: "Poppins", "Roboto", "Arial", sans-serif;
+  color: #394f5a;
+  font-weight: 500;
+}
+
+.attribute_cutted_text {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
+}
+.attribute_full_text {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
+}
+
+.row-header {
+  font-family: "Poppins", "Roboto", "Arial", sans-serif;
+  color: #394f5a;
+  font-weight: 500;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.showPosts {
+  cursor: pointer;
+  display: table;
+}
+.showPosts .greekCross,
+.showPosts h5 {
+  display: table-cell;
+}
+.greekCross {
+  color: #00bff3;
+  font-size: 15px;
+}
+.showPosts > h5 {
+  font-size: 15px;
+  display: inline;
+  padding-left: 5px;
+}
+
+// start TOOLTIP
+/* Tooltip container */
+.tooltipx {
+  position: relative;
+  display: inline-block;
+  // border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltipx .tooltiptext-custom {
+  visibility: hidden;
+  // width: 120px;
+  color: #fff;
+  text-align: center;
+  padding: 5px 5px;
+  border-radius: 5px;
+  font-size: 12px !important;
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  /* Position the tooltip text - TOP */
+  // width: 420px;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+
+  max-width: 10em; // only for contacts component
+  overflow-wrap: break-word; // only for contacts component
+  // NEW
+  box-shadow: 0 1em 2em -0.5em rgba(0, 0, 0, 0.35);
+  z-index: 1000;
+  background-color: #394f5a;
+  line-height: 1.5;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltipx:hover .tooltiptext-custom {
+  visibility: visible;
+}
+// /.end TOOLTIP
+
+.contact-avatar {
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 400;
+  text-align: center;
+  width: 42px;
+  height: 42px;
+  // padding: 10px 11px;
+  padding-top: 10px;
+  display: inline-block;
+  position: relative;
+}
+
+.contact-avatar-fullname-initials {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 400;
+  display: block;
+  font-family: "Poppins", "Roboto", "Arial", sans-serif;
+  font-weight: 400;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.contact-verified {
+  position: relative;
+  // left: -20px;
+  margin-top: -24px !important;
+}
+
+.column-th-span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #353f45;
+  // color: #566787;
+}
+
+// start attribute 'accordion' style
+.attribute_cutted_text {
+  width: calc(100% - 120px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.attribute_full_text {
+  word-wrap: break-word;
+  transition: background-color 1000ms;
+  background-color: #eee;
+}
+
+.rotate {
+  -moz-transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.rotate.up {
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+// @media (max-width: 768px){
+//   .truncate {
+//     width: 223px;
+//     white-space: nowrap;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//   }
+
+// }
+
+// ./ end attribute 'accordion' style
+
+// TOOLTIP START
+.White__Tooltip {
+  position: relative;
+  display: inline-block;
+  // border-bottom: 1px dotted black;
+}
+
+.White__Tooltip .White__Tooltiptext {
+  visibility: hidden;
+  width: fit-content;
+  // background-color: #fff;
+  // color: rgba(0,0,0, 0.87);
+  text-align: center;
+  border-radius: 6px;
+  padding: 4px 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+  // min-height: 41px;
+  line-height: 1.2;
+  // font-size: 16px;
+  // border: 1px solid #eee;
+
+  /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+  opacity: 0;
+  transition: opacity 1s;
+
+  // NEW
+  color: #fff;
+  font-size: 14px;
+  box-shadow: 0 1em 2em -0.5em rgba(0, 0, 0, 0.35);
+  background-color: #394f5a;
+}
+
+.White__Tooltip:hover .White__Tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.chat-with-agent {
+  color: #7695a5 !important;
+  cursor: pointer !important;
+  font-size: 16px !important;
+  vertical-align: middle !important;
+  margin-right: 5px;
+}
+
+#btn-chat-with {
+  margin-top: 5px;
+  margin-bottom: 0px;
+  padding-left: 6px;
+  padding-bottom: 6px;
+  padding-top: 6px;
+  background: #e4e6eb;
+  padding-right: 6px;
+  margin-right: 5px;
+}
+
+.chat-with-fullname {
+  text-transform: none;
+  color: #394f5a;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: "Poppins", "Roboto", "Arial", sans-serif;
+  position: relative;
+  top: 8px;
+}
+
+
+
+.attributes-accordion {
+  // background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 8px 0px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.attributes-accordion span svg {
+  fill: #8796af;
+}
+
+.attributes-accordion:hover span svg {
+  // background-color: #ccc;
+  // background-color: #f7f8fc;
+  fill: rgb(5, 102, 255);
+}
+
+/* 
+ Attributes decoded JWT Accordion 
+ ------------------------------------ */
+.attributes-jwt-decoded-cntct-accordion-wpr {
+  padding-left: 0px;
+  padding-right: 0px;
+  border-bottom: 1px solid #eeeeee;
+  border-top: 1px solid #eeeeee;
+  margin-top: -18px;
+}
+
+@media only screen and (max-width: 768px) {
+  .attributes-jwt-decoded-cntct-accordion-wpr {
+    margin-top: 0px;
+  }
+
+  .contact-email-col-12 {
+    margin-top: 15px;
+  }
+  // .attributes-decoded-jwt-accordion:after {
+  //   margin-right: -25px;
+  // }
+}
+.attributes-decoded-jwt-cntct-accordion {
+  color: #444;
+  cursor: pointer;
+  padding: 8px 0px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.attributes-decoded-jwt-cntct-accordion:hover {
+  background-color: #f7f8fc;
+}
+
+.attributes-decoded-jwt-cntct-accordion:after {
+  // content: "\002B";
+  content: "\f107";
+  font-family: FontAwesome;
+  // color: #777;
+  color: #039be5;
+  font-weight: bold;
+  float: right;
+  // margin-left: 5px;
+  font-size: 22px;
+  padding-right: 6px;
+}
+.attributes-decoded-jwt-cntct-accordion.active:after {
+  content: "\f106";
+  font-family: FontAwesome;
+}
+
+.attributes-decoded-jwt-panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  // overflow: hidden;
+  overflow-y: auto;
+  // transition: max-height 0.2s ease-out;
+}
+/* ./ Attributes decoded JWT Accordion  */
+
+.contact-action-wpr {
+  height: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.contact-action {
+  height: 18px;
+  cursor: pointer;
+}
+
+.contact-action > span {
+  font-size: 18px;
+}
+
+.contact-sidebar-label {
+  color: #555;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.address-label {
+  font-size: 14px;
+  color: #8796af;
+  font-weight: 400;
+}
+
+#address_arrow_down {
+  cursor: pointer;
+  color: #039be5;
+  font-size: 25px;
+  position: relative;
+  top: -1px;
+}
+
+/* Lead tag 
+/* ************************************ */
+.lead-tag-content-wpr {
+  padding: 6px 9px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+
+
+.lead-tag-content-wpr > svg {
+  fill: #8796af;
+  margin-right: 12px;
+  margin-top: 2px;
+  align-self: flex-start;
+  transition: all 0.2s ease-in-out 0s;
+}
+
+// .tag-content-wpr:hover > svg {
+//   fill: rgb(5, 102, 255);
+// }
+
+.lead-tag-content-wpr input {
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
+  flex: 1 1 90px;
+  border-radius: 0px;
+  border: 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: transparent;
+  outline: none;
+  color: rgb(8, 15, 26);
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.01em;
+}
+
+.lead-tag-content-wpr form {
+  position: relative;
+  width: 100%;
+  height: 26px;
+}
+
+.lead-tags--container-wpr {
+  // display: flex;
+  // flex-flow: row wrap;
+  // -webkit-box-align: center;
+  // align-items: center;
+  margin: 4px -12px;
+}
+
+.lead-tags--container {
+  width: 100%;
+  position: relative;
+  top: -3px;
+  left: 8px;
+}
+
+.lead-tag {
+  display: inline-block;
+}
+
+.lead-assigned-tag {
+  margin-right: 6px;
+  font-weight: 400;
+  font-family: "Poppins", "Roboto", "Arial", sans-serif;
+  font-size: 12px;
+  color: #757575;
+}
+
+.ng-select-tags-wpr {
+  height: 30px;
+}
+
+.lead-tag-delete {
+  opacity: 0;
+  color: #f44336;
+}
+
+.lead-tag:hover {
+  .tag_icon_in_ws_msgs {
+    fill: rgba(233, 235, 238, 0.3) !important;
+  }
+  .lead-tag-delete {
+    opacity: 1;
+    font-size: 16px;
+    position: relative;
+    // top: -3px;
+    // left: -2px;
+    top: 3px;
+  }
+}
+
+/* ./ Lead tag 
+/* ************************************ */
+
+::ng-deep .custom-mat-tooltip {
+  background-color: #2d323e !important;
+  font-size: 12px !important;
+  border-radius: 2px !important;
+  font-family: "Poppins", "Roboto", "Arial", sans-serif !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+
+#attributes-row {
+  padding-left: 12px;
+  padding-right: 24px;
+  margin-top: 22px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: #001b4714 0 3px 8px;
+
+  margin-top: 12px !important;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+#attributes-row:hover div p span svg {
+  //  fill: rgb(5, 102, 255);
+  fill: #0566ff;
+}
+
+#lead-attributes_arrow_down {
+  cursor: pointer;
+  color: #8796af;
+  font-size: 25px;
+  position: relative;
+  top: 2px;
+  left: 2px;
+}
+
+#attributes-row:hover div p span i {
+  //  fill: rgb(5, 102, 255);
+  color: #0566ff;
+}
+
+// Edit contact fullname in a form
+
+.dropdown__menu-form--active {
+  opacity: 1 !important;
+  transform: translateY(4px);
+  visibility: visible !important;
+}
+
+.lead-dropdown__menu-form {
+  left: 0;
+  min-width: 192px;
+  opacity: 0;
+  position: absolute;
+  // top: 100%;
+  top: 55px;
+  visibility: hidden;
+  z-index: 20;
+}
+
+.dropdown__content-form {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px 0 rgb(60 72 91 / 32%);
+  margin-bottom: 10px;
+  padding: 8px;
+}
+
+.contact-form {
+  width: 256px;
+  text-align: left;
+}
+
+.input-wrapper {
+  padding: 4px 8px;
+}
+
+.input-wrapper label {
+  margin-bottom: 4px;
+}
+
+label {
+  display: inline-block;
+  font-weight: 400;
+  max-width: 100%;
+}
+
+.input-wrapper input {
+  margin-bottom: 16px;
+}
+
+.form-input {
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  height: 38px;
+  border: 2px solid rgb(211, 219, 229);
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  padding: 0px 12px;
+  outline: none;
+  color: rgb(8, 15, 26);
+}
+
+.done--btn[disabled] {
+  cursor: not-allowed;
+  color: rgb(211, 219, 229);
+}
+
+.done--btn {
+  width: calc(100% - 16px);
+  background-color: rgb(255, 255, 255);
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+  border-image: initial;
+  border-top: 1px solid rgb(211, 219, 229);
+  outline: none;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  color: rgb(5, 102, 255);
+  cursor: pointer;
+  padding: 14px 0px 6px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.contact-details-fullname {
+  display: block;
+  font-size: 18px;
+  white-space: nowrap;
+  position: relative;
+  top: 4px;
+  font-weight: 400;
+  color: #080f1a;
+  margin-left: 45px;
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+.contact-details-fullname:hover {
+  background-color: #e2e8ef;
+  border-radius: 4px;
+}
+
+.contact-details-fullname:hover > .lead-edit--icon {
+  display: inline-block;
+}
+
+.lead-edit--icon {
+  height: 16px;
+  display: none;
+  fill: rgb(135, 150, 175);
+  float: right;
+  position: relative;
+  top: 4px;
+}

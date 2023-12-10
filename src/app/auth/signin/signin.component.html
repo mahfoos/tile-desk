@@ -1,0 +1,295 @@
+<!-- background-image: linear-gradient(to bottom, #fc766a, #f9796b, #f67b6c, #f37e6e, #f0806f); -->
+<div class="main-content"
+  style="padding-top:0px;min-height: calc(100% - 0px); margin-top: 0px;padding-left: 0px;padding-right: 0px;padding-bottom: 0px;">
+
+  <div class="container-fluid">
+    <!-- style="display: flex; justify-content: center;align-items: center;" -->
+    <div class="split left"  [ngClass]="{'hidden_left_panel' : hide_left_panel === true}">
+
+      <!-- Circle bckgnd -->
+      <!-- <div>
+        <svg viewBox="0 0 960 540" width="100%" height="100%" preserveAspectRatio="xMidYMax slice"
+          xmlns="http://www.w3.org/2000/svg" class="absolute inset-0 pointer-events-none ng-tns-c137-1"
+          style="inset: 0; position: absolute;">
+          <g fill="none" stroke="currentColor" stroke-width="100" class="text-gray-700 opacity-25 ng-tns-c137-1" style="color: gray;
+          opacity: 0.20;">
+            <circle r="234" cx="196" cy="23" class="ng-tns-c137-1"></circle>
+            <circle r="234" cx="790" cy="491" class="ng-tns-c137-1"></circle>
+          </g>
+        </svg>
+      </div> -->
+
+      <!--  --------------------------------------------------------------- -->
+      <!--  Right panel -->
+      <!--  --------------------------------------------------------------- -->
+      <div class="centered-horizontally" style="margin:auto; margin-top: 60px;">
+
+        <div class="left-logo" style="z-index: 1050; position: relative;" (click)="goToCompanySite()">
+          <!-- <a [href]="company_site_url" target="_blank"> -->
+
+            <!-- <img [src]="companyLogoAllWithe_Url" class="img-fluid" style="width: 180px;"/> -->
+            <!-- <img src="assets/img/logos/tiledesk_planet.svg" class="img-fluid" style="width: 200px;" /> -->
+            <img [src]="companyLogoBlack_Url" class="img-fluid" style="max-width: 150px; height: auto; top: -50px;
+            left: 25px;position: absolute;" />
+          <!-- </a> -->
+        </div>
+
+        <!-- <div class="welcome-text">
+          <span> Welcome </span> <span style="display: block;"> to Tiledesk </span>
+        </div> -->
+
+        <!-- <div class="welcome-text-subtitle">
+          The community-led no-code platform for customer engagement. 
+          <span style="display: block;"> Omni-channel live chat + AI-powered chatbots and conversational apps. </span> 
+        </div> -->
+
+        <div class="signin-no-account-wpr">
+          <h2 class="signin-no-account">
+            {{ "Book A Demo" | translate }}
+          </h2>
+
+          <button id="go-to-signup-btn" (click)="goToSignupPage()" type="submit" class="btn btn-white">
+            {{ 'Demo' | translate}}
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="split right">
+      <!-- ALERT WITH ERROR MESSAGE -->
+      <!-- <div class="row" *ngIf="signin_errormsg" [ngStyle]="{'display':display}" style="transform: translateY(30%);">
+        <div class="col-md-4 col-md-offset-4" align="center">
+          <div class="alert alert-danger" style="max-width: 400px;">
+            <button type="button" aria-hidden="true" class="close" (click)="dismissAlert()">×</button>
+            <div class="glyphicon glyphicon-exclamation-sign" style="display:table-cell; font-size:1.2em"></div>
+            <div style="padding-left: 5px; display:table-cell;">{{ signin_errormsg }}</div>
+          </div>
+        </div>
+      </div> -->
+
+
+      <!-- --------------------------------------------------------------- -->
+      <!-- Right logo -->
+      <!-- --------------------------------------------------------------- -->
+      <!-- position: relative;  top: 16px; -->
+      <div class="right-logo" style="text-align: center;">
+        <a [href]="company_site_url" target="_blank">
+          <!-- [src]="companyLogoBlack_Url"  -->
+          <!-- assets/img/logos/tiledesk_2.0_logo_black_v2.svg -->
+          <img [src]="companyLogoBlack_Url" class="img-fluid" style="max-width: 150px; height: auto;" />
+        </a>
+      </div>
+      <div class="centered">
+<!--        <div class="logo-at-media-plus-992">-->
+<!--          <svg _ngcontent-pgl-c83="" xml:space="preserve" xmlns:xlink="http://www.w3.org/1999/xlink" height="48px"-->
+<!--            viewBox="0 0 60 60" width="48px" x="0px" xmlns="http://www.w3.org/2000/svg" y="0px">-->
+<!--            <path _ngcontent-pgl-c83=""-->
+<!--              d="M51.8,28.2h-19c-1.7,0-3-1.3-3-3V6.4c0-1.7-1.3-3-3-3H8c-1.7,0-3,1.3-3,3v22v22c0,1.7,1.3,3,3,3H6.7h3.4  c0.8,0,1.3,0.2,1.9,0.8l2.3,2.3l2.1,2.1c0.8,0.8,1.7,0.8,2.4,0l2.1-2.1l2.3-2.3c0.6-0.6,1.1-0.8,1.9-0.8H52c1.7,0,3-1.3,3-3V31.2  C54.8,29.5,53.5,28.2,51.8,28.2"-->
+<!--              fill="#F18876"></path>-->
+<!--            <path _ngcontent-pgl-c83=""-->
+<!--              d="M52,24.2H36.8c-1.5,0-2.8-1.3-2.8-2.8V6.2c0-1.5,1.3-2.8,2.8-2.8H52c1.5,0,2.8,1.3,2.8,2.8v15.2  C54.8,22.9,53.5,24.2,52,24.2"-->
+<!--              fill="#E5BBAD"></path>-->
+<!--          </svg>-->
+<!--        </div>-->
+        <div class="signin-title">
+          <h2>
+            {{ "SignIn" | translate}}
+            <!-- {{ "SignInTo" | translate}} {{ company_name }} -->
+          </h2>
+          <!-- <div *ngIf="SUP === true" class="signin-subtitle">
+            {{ "Dont" | translate }} {{ "HaveAnAccountYet" | translate }}
+            <span class="auth-link-button" (click)="goToSignupPage()">
+              {{ 'CreateAFreeAccount' | translate}}
+            </span>
+          </div> -->
+
+
+          <!-- <img src="assets/img/logos/tiledesk_2.0_logo_black_v2.svg" class="img-fluid" style="max-width: 280px;
+          margin-top: 30px;
+          margin-bottom: 30px;" /> -->
+        </div>
+
+        <div class="login-container">
+
+<!--        <button type="button" rel="opener" class="google-button" (click)="signinWithGoogle()">-->
+<!--            <div style="margin-right: 10px; background: rgb(255, 255, 255); padding: 10px; border-radius: 2px;">-->
+<!--       -->
+<!--              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 186.69 190.5"-->
+<!--                xmlns:v="https://vecta.io/nano" style="position: relative;top: 2px;">-->
+<!--                <g transform="translate(1184.583 765.171)">-->
+<!--                  <path clip-path="none" mask="none"-->
+<!--                    d="M-1089.333-687.239v36.888h51.262c-2.251 11.863-9.006 21.908-19.137 28.662l30.913 23.986c18.011-16.625 28.402-41.044 28.402-70.052 0-6.754-.606-13.249-1.732-19.483z"-->
+<!--                    fill="#4285f4" />-->
+<!--                  <path clip-path="none" mask="none"-->
+<!--                    d="M-1142.714-651.791l-6.972 5.337-24.679 19.223h0c15.673 31.086 47.796 52.561 85.03 52.561 25.717 0 47.278-8.486 63.038-23.033l-30.913-23.986c-8.486 5.715-19.31 9.179-32.125 9.179-24.765 0-45.806-16.712-53.34-39.226z"-->
+<!--                    fill="#34a853" />-->
+<!--                  <path clip-path="none" mask="none"-->
+<!--                    d="M-1174.365-712.61c-6.494 12.815-10.217 27.276-10.217 42.689s3.723 29.874 10.217 42.689c0 .086 31.693-24.592 31.693-24.592-1.905-5.715-3.031-11.776-3.031-18.098s1.126-12.383 3.031-18.098z"-->
+<!--                    fill="#fbbc05" />-->
+<!--                  <path-->
+<!--                    d="M-1089.333-727.244c14.028 0 26.497 4.849 36.455 14.201l27.276-27.276c-16.539-15.413-38.013-24.852-63.731-24.852-37.234 0-69.359 21.388-85.032 52.561l31.692 24.592c7.533-22.514 28.575-39.226 53.34-39.226z"-->
+<!--                    fill="#ea4335" clip-path="none" mask="none" />-->
+<!--                </g>-->
+<!--              </svg>-->
+<!--            </div>-->
+<!--            <div style="padding: 10px 10px 10px 0px; font-weight: 500; width: calc(100% - 91px);">Sign in with Google</div>-->
+<!--          </button>-->
+  
+<!--          <div class="auth-&#45;&#45;divider"><span>&nbsp;&nbsp;or&nbsp;&nbsp;</span></div>-->
+  
+          <div class="h-20"></div> 
+
+
+          <form [formGroup]="userForm" (ngSubmit)="signin()">
+
+            <label for="email">Email</label>
+            <input type="email" class="input" formControlName="email" id="email" required autocapitalize="off"
+              spellcheck="false">
+
+            <div *ngIf="formErrors.email" class="is-danger" translate>
+
+              {{ formErrors.email }}
+            </div>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" class="input" formControlName="password" autocomplete="on" required>
+
+            <div *ngIf="formErrors.password" class="is-danger" translate>
+              {{ formErrors.password }}
+            </div>
+            <!-- [disabled]="!userForm.valid" -->
+            <button type="submit" class="btn signin-button">
+              <span *ngIf="!showSpinnerInLoginBtn">
+                <!-- Login  -->
+                {{ 'Login' | translate}}
+              </span>
+              <span *ngIf="showSpinnerInLoginBtn"> <i class="fa fa-spinner fa-spin"></i></span>
+            </button>
+
+            <!-- <span *ngIf="userForm.valid" class="help is-success">Form Looks Valid</span> -->
+            <div class="left-panel-signup-link" (click)="goToSignup()">
+              <!-- <a routerLink="/signup"> -->
+                {{ "DontHaveAnAccountYet" | translate }}
+                <span style="color: #03a5e8; cursor: pointer;">
+                  {{ "SignUp" | translate }}
+                </span>
+              <!-- </a> -->
+            </div>
+            <!-- style="color: #666666; font-size: 1.1em; text-align: center; margin-top: 16px;" -->
+            <p class="signin-forgot-pswrd">
+              {{ "ForgotYourPassword" | translate }}?
+              <span style="color: #03a5e8; cursor:pointer" (click)="goToResetPsw()">
+                {{ "ClickHere" | translate }}
+              </span>
+            </p>
+            <!-- <a *ngIf="!passReset && userForm.controls.email.valid" class="help is-info" (click)="resetPassword()">Reset Password for {{userForm.value.email}}?</a>
+        <p *ngIf="passReset" class="help is-info">Reset requested. Check your email instructions.</p> -->
+
+            <!-- <p *ngIf="isVisibleV1L === true" class="left-panel-gotov1-link"
+              style="color: #666666; font-size: 1.1em; text-align: center; margin-top: 16px;">
+              {{ "IfYouWantToLoginToTheOldVersion" | translate }}
+              <span style="color: #03a5e8; cursor:pointer; text-transform: lowercase;" (click)="goToTiledekV1()">
+                {{ "ClickHere" | translate }}
+              </span>
+            </p> -->
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+<!-- -------------------------------------------------------------------------------------------- -->
+<!-- Old login template -->
+<!-- -------------------------------------------------------------------------------------------- -->
+<!-- <div class="main-content" style="padding-top:0px; display: none;">
+ 
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+     
+        <div style="text-align: center; cursor: pointer; margin-top: -70px;">
+       
+          <a [href]="company_site_url" target="_blank">
+          
+            <img [src]="companyLogoBlack_Url" class="img-fluid"
+              style="max-width: 150px; height: auto; padding-top:25px" />
+          </a>
+        </div>
+
+        <!- - ALERT WITH ERROR MESSAGE - ->
+        <div class="row" *ngIf="signin_errormsg" [ngStyle]="{'display':display}" style="transform: translateY(30%);">
+          <div class="col-md-4 col-md-offset-4" align="center">
+            <div class="alert alert-danger" style="max-width: 400px;">
+              <button type="button" aria-hidden="true" class="close" (click)="dismissAlert()">×</button>
+              <div class="glyphicon glyphicon-exclamation-sign" style="display:table-cell; font-size:1.2em"></div>
+              <div style="padding-left: 5px; display:table-cell;">{{ signin_errormsg }}</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="signin-title" style="text-align:center">
+          <h2 style="font-family: 'Google Sans', sans-serif !important;">
+           
+            {{ "SignInTo" | translate}} {{ company_name }}
+
+          </h2>
+        </div>
+
+        <div class="login-container" style="padding-top: 15px;">
+         
+          <form [formGroup]="userForm" (ngSubmit)="signin()">
+
+            <label for="email">Email</label>
+        
+            <input type="email" class="input" formControlName="email" id="email_old" required autocapitalize="off"
+              spellcheck="false">
+
+              <div *ngIf="formErrors.email" class="is-danger" translate>
+                {{ formErrors.email }}
+              </div>
+
+            <label for="password">Password</label>
+            <input type="password" id="password_old" class="input" formControlName="password" required>
+
+            <div *ngIf="formErrors.password" class="is-danger" translate>
+              {{ formErrors.password }}
+            </div>
+
+            <button type="submit" class="btn signin-button" [disabled]="!userForm.valid">
+              <span *ngIf="!showSpinnerInLoginBtn">
+                
+                {{ 'Login' | translate}}
+              </span>
+              <span *ngIf="showSpinnerInLoginBtn"> <i class="fa fa-spinner fa-spin"></i></span>
+            </button>
+
+          
+            <div style="margin-top:16px; text-align: center">
+              <a routerLink="/signup" style="color: #666666; font-size: 1.1em">
+                {{ "DontHaveAnAccountYet" | translate }}
+                <span style="color: #03a5e8">
+                  {{ "SignUp" | translate }}
+                </span>
+              </a>
+            </div>
+
+            <p style="color: #666666; font-size: 1.1em; text-align: center; margin-top: 16px;">
+              {{ "ForgotYourPassword" | translate }}?
+              <span style="color: #03a5e8; cursor:pointer" (click)="goToResetPsw()">
+                {{ "ClickHere" | translate }}
+              </span>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

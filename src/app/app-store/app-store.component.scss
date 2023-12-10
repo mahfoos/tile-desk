@@ -1,0 +1,186 @@
+.app-icon img {
+    width: auto;
+    height: 50px;
+}
+
+.app-icon svg {
+    width: auto;
+    height: 50px;
+}
+
+.card-app-store {
+    box-shadow: unset;
+    border: 1px solid #e5effe;
+    // transition: border 0s,box-shadow 0.4s ease-out,transform 0.4s ease-out,opacity 0.4s ease-out;
+    // transition-delay: 0.1s;
+    // transform: translateZ(0);
+}
+
+// .card-app-store:hover {
+//     box-shadow: 0 20px 50px 0 rgba(0,0,0,0.1);
+//     z-index: 1;
+// }
+
+.card-content-app-store {
+    color: #7695a5;
+    height: 72px;
+    overflow: hidden;
+}
+
+.app-store-right-col-btn {
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.app-store-left-col-btn {
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+    border-right: 0.5px solid #e5effe;
+}
+
+.app-store-right-col-btn:hover {
+    a {
+        color: #23527c;
+    }
+}
+
+.app-store-left-col-btn:hover {
+    a {
+        color: #23527c;
+    }
+}
+
+.card-footer-app-store {
+    margin: 0 15px 0px;
+    padding-top: 0px;
+    border-top: 1px solid #e5effe;
+}
+
+.app-card-icon {
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    background: #e4e6eb;
+    border-radius: 50%;
+    padding-top: 9px;
+}
+
+.app-card-icon:hover {
+    background: #cfd2d7;
+}
+
+.app-not-installed {
+    pointer-events: none;
+    cursor: not-allowed;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.app-installed {
+    color: #07080a;
+}
+
+.app-installed-wpr {
+    background-color: #7aeb8d;
+    height: 41px;
+}
+
+.app-not-installed-wpr {
+    background-color: #e4e6eb;
+    pointer-events: none;
+}
+.app-installed-wpr:hover {
+    background-color: #00a11b;
+}
+
+.app-installed-wpr:hover .app-installed {
+    color: #fff;
+}
+
+.icon-start-app-in-app-store-istall {
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.app-installed-wpr:hover .icon-start-app-in-app-store-istall {
+    color: #fff;
+}
+
+.uninstall-btn {
+    background-color: #f44336;
+}
+
+.uninstall-anchor {
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.uninstall-btn:hover {
+    background-color: #8d021f;
+}
+
+.uninstall-btn:hover .uninstall-anchor {
+    color: #fff;
+}
+
+.manage-btn {
+    background-color: rgb(45, 88, 230);
+}
+
+.manage-btn:hover {
+    background-color: #1b74e4;
+}
+
+::ng-deep .custom-mat-tooltip {
+    background-color: #2d323e !important;
+    font-size: 12px !important;
+    border-radius: 2px !important;
+    font-family: "Poppins", "Roboto", "Arial", sans-serif !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+}
+
+
+.div-disabled {
+    pointer-events:none;
+    background: #eee;
+}
+.card-create-app-icon-wpr {
+    color: #f0806f;
+    text-align: center;
+    padding-top: 25px;
+}
+
+.card-create-app-text {
+    color: #f0806f;
+    text-align: center;
+    margin-bottom: 15px;
+    font-family: "Poppins", Arial, sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.create-app-card {
+    cursor: pointer;
+}
+
+.create-app-card:hover {
+    box-shadow: 0 7px 8px -4px rgb(0 0 0 / 20%), 0 12px 17px 2px rgb(0 0 0 / 14%), 0 5px 22px 4px rgb(0 0 0 / 12%) !important;
+}
+
+.section-title {
+    width: 100%;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 42px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 18px;
+    font-size: 18px;
+    line-height: 23px;
+    letter-spacing: -0.01em;
+    border-bottom: 1px solid rgb(239, 242, 246);
+    color: #080f1a;
+    font-family: "Poppins", "Roboto", "Arial", sans-serif;
+}
